@@ -1,0 +1,54 @@
+<ng-container *ngVar="bitstreams$ | async as bitstreams">
+  <div class="files-menu-header file-header-container">
+    <div>
+      <i class="fas fa-solid fa-file"></i>
+    </div>
+    <!-- kware-edit start -->
+    <div *ngIf="bitstreams?.length > 0">
+      <span *ngIf="selectedFile; else block">
+        <span *ngFor="let file of bitstreams; let index = index">
+          <span *ngIf="file.id === selectedFile"
+            >{{ currentIndex + 1 }} / {{ bitstreams?.length }}</span
+          >
+        </span>
+      </span>
+      <ng-template #block>
+        {{ bitstreams?.indexOf() + 1 }} / {{ bitstreams?.length }}
+      </ng-template>
+    </div>
+    <div>
+      <button
+        class="btn btn-primary previous"
+        [disabled]="currentIndex === 0 || !selectedFile"
+        (click)="prevFile()"
+      >
+        <i class="fas fa-solid fa-backward"></i>
+      </button>
+
+      <button
+        class="btn btn-primary next"
+        [disabled]="currentIndex === bitstreams?.length - 1 || !selectedFile"
+        (click)="nextFile()"
+      >
+        <i class="fas fa-solid fa-forward"></i>
+      </button>
+    </div>
+  </div>
+  <!-- kware-edit end -->
+  <ds-themed-loading
+    *ngIf="isLoading"
+    message="{{ 'loading.default' | translate }}"
+    [showMessage]="false"
+  ></ds-themed-loading>
+  <div *ngIf="bitstreams?.length > 0" class="files-menu">
+    <ds-item-file
+      *ngFor="let file of bitstreams; index as indexOfelement"
+      [bitstream]="file"
+      [item]="item"
+      [ngClass]="file.id === selectedFile ? 'file-link-selected' : 'file-link'"
+      (click)="selectedIndex(indexOfelement)"
+      (selectedFile)="setSelectedFile($event)"
+    >
+    </ds-item-file>
+  </div>
+</ng-container>

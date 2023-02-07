@@ -1,0 +1,56 @@
+<nav [ngClass]="{'open': !(menuCollapsed | async)}"
+  [@slideMobileNav]="!(windowService.isXsOrSm() | async) ? 'default' :
+  ((menuCollapsed | async) ? 'collapsed' : 'expanded')"
+  class="navbar navbar-expand-md navbar-light p-0 navbar-container"
+  role="navigation" [attr.aria-label]="'nav.main.description' | translate">
+  <div class="container h-100">
+    <!-- <a class="navbar-brand my-2" routerLink="/home" *ngIf="lang ; else
+      elseBlock">
+
+    </a>
+    <ng-template #elseBlock>
+      <a class="navbar-brand my-2" routerLink="/home">
+        <img src="assets/images/logo-imam.png"
+          [attr.alt]="'menu.header.image.logo' | translate" />
+      </a>
+    </ng-template> -->
+      
+    <a class="navbar-brand" href="/">
+      <div class="logo-area">
+          <img class="main-logo" src="assets/images/logo-imam.png" alt="">
+          <img class="small-logo" src="/_layouts/15/2016/Portal/img/small-logo.svg" alt="">
+          <div class="imam-info hidden-xs hidden-sm">
+              <h6> {{'footer.top.content1' | translate}}</h6>
+              <h6> {{'footer.top.content6' | translate}}</h6>
+              
+          </div>
+      </div>
+  </a>
+
+    <div id="collapsingNav" class="w-100">
+      <!-- <ul class="navbar-nav me-auto mb-2 mb-lg-0 h-100">
+        <ng-container *ngFor="let section of (sections | async)">
+          <ng-container style="color: #fff;" *ngComponentOutlet="(sectionMap$ |
+            async).get(section.id)?.component; injector: (sectionMap$ |
+            async).get(section.id)?.injector;"></ng-container>
+        </ng-container>
+      </ul> -->
+    </div>
+    <ds-search-navbar class="navbar-collapsed"></ds-search-navbar>
+    <ds-help-links class="navbar-collapsed"></ds-help-links>
+    <ds-auth-nav-menu class="navbar-collapsed"></ds-auth-nav-menu>
+    <ds-impersonate-navbar class="navbar-collapsed"></ds-impersonate-navbar>
+    <ds-lang-switch class="navbar-collapsed"></ds-lang-switch>
+    <!-- <div *ngIf="lang" class="ribbon-1 left">{{'nav.demo.site' | translate}}</div>
+    <div *ngIf="!lang" class="ribbon-1 right">{{'nav.demo.site' | translate}}</div> -->
+  </div>
+  <div class="second-nav ">
+    <ul  class=" navbar-nav  mb-2 mb-lg-0 h-100 list-inline mb-2 container ">
+      <ng-container *ngFor="let section of (sections | async)">
+        <ng-container style="color: #fff;" *ngComponentOutlet="(sectionMap$ |
+          async).get(section.id)?.component; injector: (sectionMap$ |
+          async).get(section.id)?.injector;"></ng-container>
+      </ng-container>
+    </ul>
+  </div>
+</nav>

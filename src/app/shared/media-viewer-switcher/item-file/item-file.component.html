@@ -1,0 +1,28 @@
+<a
+  *ngIf="(bitstreamPath$ | async)?.routerLink.endsWith('/request-a-copy')"
+  [routerLink]="(bitstreamPath$ | async)?.routerLink"
+  class="file-link-container"
+  [queryParams]="(bitstreamPath$ | async)?.queryParams"
+>
+  <span *ngIf="!(canDownload$ | async)"><em class="fas fa-lock"></em></span>
+  <ng-container *ngTemplateOutlet="content"></ng-container>
+  <span class="file-name">{{ bitstream?.name }}</span>
+</a>
+
+<a
+  *ngIf="(bitstreamPath$ | async)?.routerLink.endsWith('/download')"
+  (click)="emitMediaViewerSwitcher()"
+  class="file-link-container"
+>
+  <img
+    class="file-thumbnail"
+    [src]="getIconByFileFormat()"
+    alt="Image not found"
+    width="60px"
+    height="60px"
+  />
+  <span class="file-name">{{ bitstream?.name }}</span>
+</a>
+<ng-template #content>
+  <ng-content></ng-content>
+</ng-template>

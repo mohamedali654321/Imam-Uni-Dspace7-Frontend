@@ -1,0 +1,55 @@
+<div class="background-image">
+
+  <section class="fullscreen-video-wrap">
+<img style="z-index: 1;height: 100%;" src="assets/images/imamuImg.jpeg"/>
+
+
+  </section>
+
+</div>
+
+<div style="" >
+  <div class="container">
+
+    <div class="jumbotron jumbotron-fluid">
+      <div class="">
+        <div>
+          <div _ngcontent-dspace-angular-c225="" class="homePageSearch">
+            <div _ngcontent-dspace-angular-c225=""  class="homePageSearchContainer">
+              <h2 _ngcontent-dspace-angular-c225="" style="color: #fff;" class="homePageSearchHeader">{{ "home.news.dspace7" | translate }}</h2>
+              <br>
+              <div class="homePageSearchForm ">
+                <ds-search-form  [showScopeSelector]="showScopeSelector" [inPlaceSearch]="false" [searchPlaceholder]="'home.search-form.placeholder' | translate"></ds-search-form>
+
+              </div>
+
+            </div>
+          </div>
+        </div>
+      </div>
+      
+      <div style="list-style:none ;margin-bottom: 10px;margin-top: 100px;z-index: 10000;position: relative;">
+        <div _ngcontent-dspace-angular-c463="" class="threeStepsSubmit">
+          <div _ngcontent-dspace-angular-c463="" class="row threeStepsRow">
+            <div *ngIf="!(isAuthorized$ | async)"  _ngcontent-dspace-angular-c463="" class="col-lg-4 col-sm-12">
+              <h1 _ngcontent-dspace-angular-c463="">{{'home-news-number1' | translate}}</h1>
+              <p _ngcontent-dspace-angular-c463="">{{'home-news-login' | translate}}</p>
+              <button [routerLink]="'/login'" _ngcontent-dspace-angular-c463="" class="btn btn-primary" tabindex="0">{{'home-news-login-btn' | translate}}</button>
+            </div>
+            <div _ngcontent-dspace-angular-c463="" class="col-lg-4 col-sm-12">
+              <h1 _ngcontent-dspace-angular-c463="">{{'home-news-number2' | translate}}</h1>
+              <p _ngcontent-dspace-angular-c463="">{{'home-news-submit' | translate}}</p>
+              <button (click)="showCreateItemModal()"  _ngcontent-dspace-angular-c463="" class="btn btn-primary" tabindex="0">{{'home-news-submit-btn' | translate}}</button>
+            </div>
+            <div _ngcontent-dspace-angular-c463="" class="col-lg-4 col-sm-12">
+              <h1 _ngcontent-dspace-angular-c463="">{{'home-news-number3' | translate}}</h1>
+              <p _ngcontent-dspace-angular-c463="">{{'home-news-edit' | translate}}</p>
+              <button (click)="showEditItemModal()"  _ngcontent-dspace-angular-c463="" class="btn btn-primary" tabindex="0">{{'home-news-edit-btn' | translate}}</button>
+            </div>
+          </div>
+        </div>
+      </div>
+
+    </div>
+  </div>
+</div>

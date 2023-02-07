@@ -1,0 +1,82 @@
+<!-- {{ fileFormat }} -->
+
+<div class="viewer-toolbar" *ngIf="fileURL">
+  <div class="viewer-toolbar-content">
+    <div class="viewer-toolbar-controls">
+      <ul>
+        <!-- <li>
+          <button
+            *ngIf="fileURL && fileFormat === 'application/pdf'"
+            (click)="modifyPdf()"
+          >
+            watermark
+          </button>
+        </li> -->
+        <li>
+          <button class="viewer-toolbar-btn" (click)="downloadFile()">
+            <em class="fa fa-download"></em>
+          </button>
+        </li>
+      </ul>
+    </div>
+    <div class="viewer-toolbar-filename">{{ fileName }}</div>
+
+    <div class="viewer-toolbar-close">
+      <button class="viewer-toolbar-btn" (click)="closeViewer()">
+        <i class="fa fa-times" aria-hidden="true"></i>
+      </button>
+    </div>
+  </div>
+</div>
+<div class="media-viewer" *ngIf="fileURL">
+  <ng2-pdfjs-viewer
+    *ngIf="fileFormat === 'application/pdf'"
+    #pdfJsViewer
+    [pdfSrc]="fileURL"
+    [locale]="localeCode"
+    [openFile]="false"
+    [download]="false"
+    (onBeforePrint)="modifyPdf()"
+  ></ng2-pdfjs-viewer>
+
+  <ds-video-player
+    *ngIf="fileFormat.startsWith('video') || fileFormat.startsWith('audio')"
+    [src]="fileURL"
+    [options]="{
+      autoplay: true,
+      controls: true,
+      sources: [{ src: fileURL, type: fileFormat }]
+    }"
+  ></ds-video-player>
+
+  <ds-image-viewer
+    *ngIf="fileFormat.startsWith('image')"
+    [src]="fileURL"
+  ></ds-image-viewer>
+
+  <ds-document-viewer
+    *ngIf="msFilesFormats.includes(fileFormat)"
+    [docURL]="fileURL"
+    [locale]="localeCode"
+  ></ds-document-viewer>
+
+  <div
+    class="downlaod-only"
+    *ngIf="
+      !msFilesFormats.includes(fileFormat) &&
+      !fileFormat.startsWith('image') &&
+      !fileFormat.startsWith('video') &&
+      fileFormat !== 'application/pdf'
+    "
+  >
+    <span>{{
+      "fileSection.viewerSwitcher.downloadOnly.message" | translate
+    }}</span>
+    <button class="viewer-toolbar-btn" (click)="downloadFile()">
+      <em class="fa fa-download"></em>
+      <span>{{
+        "fileSection.viewerSwitcher.downloadOnly.btn" | translate
+      }}</span>
+    </button>
+  </div>
+</div>

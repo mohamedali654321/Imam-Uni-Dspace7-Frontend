@@ -1,0 +1,116 @@
+.media-viewer {
+  width: inherit ;
+  display: block;
+  border: 2px solid rgb(243, 243, 247);
+  height: 650px;
+  margin-bottom: 50px;
+}
+
+#pdfJsViewer {
+  border: 1px solid #dee2e6;
+  height: 650px;
+  width: 100%;
+}
+
+.viewer-toolbar {
+  position: relative;
+  justify-content: space-between;
+  top: 0;
+  left: 0;
+  width: inherit ;
+  height: 40px;
+  background: rgb(243, 243, 247);
+}
+
+.viewer-toolbar-content {
+  display: flex;
+  align-items: center;
+  height: 100%;
+  padding: 0 1rem;
+}
+
+.viewer-toolbar-close-btn {
+  margin: 0;
+  padding: 0;
+  width: 110px;
+  height: 50px;
+}
+
+.viewer-toolbar-filename {
+  display: flex;
+  flex: 1;
+  justify-content: center;
+  align-items: center;
+  font-weight: bold;
+  color:#3a3636;
+}
+
+.viewer-toolbar-controls ul {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  display: flex;
+  justify-content: flex-end;
+  align-items: center;
+}
+
+.viewer-toolbar-controls li {
+  // padding: 0 0.2rem;
+  align-items: center;
+  justify-content: center;
+}
+
+.viewer-toolbar-btn {
+  background-color: unset;
+  border: none;
+  // color: white;
+  // padding: 12px 16px; /* Some padding */
+  // font-size: 16px; /* Set a font size */
+  cursor: pointer;
+}
+
+.downlaod-only {
+  display: flex;
+  flex-direction: column;
+  height: 100%;
+  width: 100%;
+  font-size: 1.4rem;
+  background: rgba(18, 18, 18, 0.03);
+  color: rgba(0, 0, 0, 0.62);
+  justify-content: center;
+  align-items: center;
+}
+
+.downlaod-only button {
+  background-color: rgba(0, 0, 0, 0.62);
+  border-radius: 10px;
+  color: white;
+  font-size: 1.4rem;
+  cursor: pointer;
+  padding: 10px;
+  justify-content: center;
+  align-items: center;
+  -webkit-border-radius: 10px;
+  -moz-border-radius: 10px;
+  -ms-border-radius: 10px;
+  -o-border-radius: 10px;
+}
+
+.downlaod-only span,em {
+padding: 10px;
+}
+
+// kare-edit
+@media screen and (min-width: 700px){
+  .media-viewer {
+    width: 50vw !important;
+  }
+
+  .viewer-toolbar {
+
+    width: 50vw !important;
+
+  }
+}
+
+

@@ -1,0 +1,31 @@
+
+<ng-container >
+
+
+<div  *ngIf="accessStatus$ | async as accessStatus " class="page">
+
+
+
+  <ng2-pdfjs-viewer *ngIf="srcRestricted !== undefined && accessStatus === 'restricted'  "
+  [pdfSrc]="decodeURL(srcRestricted)"
+  [openFile]="false"
+  [zoom]="'page-fit'"
+  [locale]="locale"
+  class="pdf-viewer"
+  id="mirador-viewer"
+  >
+ </ng2-pdfjs-viewer>
+
+   <ng2-pdfjs-viewer  *ngIf="accessStatus !== 'restricted' && src !== undefined "
+   [(pdfSrc)]="src"
+   [openFile]="false"
+   [zoom]="'page-fit'"
+   [locale]="locale"
+   class="pdf-viewer"
+   id="mirador-viewer"
+   >
+  </ng2-pdfjs-viewer>
+</div>
+
+
+</ng-container>
