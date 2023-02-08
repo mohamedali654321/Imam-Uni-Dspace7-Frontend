@@ -9,6 +9,9 @@ import { TruncatableService } from '../../truncatable/truncatable.service';
 import { Metadata } from '../../../core/shared/metadata.utils';
 import { DSONameService } from '../../../core/breadcrumbs/dso-name.service';
 import { APP_CONFIG, AppConfig } from '../../../../config/app-config.interface';
+import { Item } from 'src/app/core/shared/item.model';
+import { followLink } from '../../utils/follow-link-config.model';
+import { LinkService } from 'src/app/core/cache/builders/link.service';//kware-edit
 
 @Component({
   selector: 'ds-search-result-list-element',
@@ -31,6 +34,7 @@ export class SearchResultListElementComponent<T extends SearchResult<K>, K exten
 
   public constructor(protected truncatableService: TruncatableService,
                      protected dsoNameService: DSONameService,
+                     protected linkService: LinkService, //kware-edit
                      @Inject(APP_CONFIG) protected appConfig?: AppConfig) {
     super();
   }
@@ -42,6 +46,7 @@ export class SearchResultListElementComponent<T extends SearchResult<K>, K exten
     if (hasValue(this.object)) {
       this.dso = this.object.indexableObject;
       this.dsoTitle = this.dsoNameService.getName(this.dso);
+      // this.linkService.resolveLink<Item>(this.dso, followLink('thumbnail')); 
     }
      // this.keywords=this.dso.allMetadataValues('dc.subject').slice(0,3); //kwar-edit
      let  arabic = /[\u0600-\u06FF]/;

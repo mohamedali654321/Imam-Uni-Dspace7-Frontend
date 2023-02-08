@@ -74,7 +74,7 @@ export class PoolSearchResultListElementComponent extends SearchResultListElemen
     protected objectCache: ObjectCacheService,
     @Inject(APP_CONFIG) protected appConfig: AppConfig
   ) {
-    super(truncatableService, dsoNameService, appConfig);
+    super(truncatableService, dsoNameService,linkService, appConfig);
   }
 
   /**

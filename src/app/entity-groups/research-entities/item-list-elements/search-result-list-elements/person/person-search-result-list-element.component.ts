@@ -30,7 +30,7 @@ export class PersonSearchResultListElementComponent extends ItemSearchResultList
     protected linkService: LinkService,//kware-edit
     @Inject(APP_CONFIG) protected appConfig: AppConfig
   ) {
-    super(truncatableService, dsoNameService, appConfig);
+    super(truncatableService, dsoNameService,linkService, appConfig);
   }
 
   /**

@@ -6,7 +6,7 @@ import { SearchResultListElementComponent } from '../../../search-result-list-el
 import { Item } from '../../../../../../core/shared/item.model';
 import { getItemPageRoute } from '../../../../../../item-page/item-page-routing-paths';
 import { hasValue } from 'src/app/shared/empty.util';
-
+import { followLink } from 'src/app/shared/utils/follow-link-config.model';
 @listableObjectComponent('PublicationSearchResult', ViewMode.ListElement)
 @listableObjectComponent(ItemSearchResult, ViewMode.ListElement)
 @Component({
@@ -32,6 +32,7 @@ export class ItemSearchResultListElementComponent extends SearchResultListElemen
     super.ngOnInit();
     this.showThumbnails = this.appConfig.browseBy.showThumbnails;
     this.itemPageRoute = getItemPageRoute(this.dso);
+    this.linkService.resolveLink<Item>(this.dso, followLink('thumbnail')); //kware-edit
   }
 
      // kware edit

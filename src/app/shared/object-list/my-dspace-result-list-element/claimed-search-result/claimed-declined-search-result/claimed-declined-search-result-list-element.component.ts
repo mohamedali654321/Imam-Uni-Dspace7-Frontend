@@ -48,7 +48,7 @@ export class ClaimedDeclinedSearchResultListElementComponent extends SearchResul
     protected dsoNameService: DSONameService,
     @Inject(APP_CONFIG) protected appConfig: AppConfig
   ) {
-    super(truncatableService, dsoNameService, appConfig);
+    super(truncatableService, dsoNameService,linkService, appConfig);
   }
 
   /**

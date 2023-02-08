@@ -54,7 +54,7 @@ export class OrgUnitSearchResultListSubmissionElementComponent extends SearchRes
               protected linkService: LinkService,//kware-edit
               @Inject(APP_CONFIG) protected appConfig: AppConfig
   ) {
-    super(truncatableService, dsoNameService, appConfig);
+    super(truncatableService, dsoNameService,linkService, appConfig);
   }
 
   ngOnInit() {
