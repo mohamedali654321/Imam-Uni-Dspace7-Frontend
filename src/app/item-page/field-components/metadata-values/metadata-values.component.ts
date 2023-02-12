@@ -66,7 +66,7 @@ export class MetadataValuesComponent implements OnChanges {
      if (this.link === 'type') {this.link = 'itemtype';}
      // if(this.link === 'date') this.link="issued";
 
-     if (this.link === 'date') {this.link = 'issued';}
+     if (this.link === 'date' || this.link === 'issuedate') {this.link = 'issued';}
 
       if (this.link === 'authoralternative') {this.link = 'author';}
 
@@ -74,9 +74,10 @@ export class MetadataValuesComponent implements OnChanges {
 
        this.check = this.link === 'abstract' || this.link === 'citation' || this.link === 'description' || this.link === 'biography' || this.link === 'isbn' || this.link === 'ddc' || this.link === 'papersnumber' || this.link === 'report' || this.link === 'budget'  || this.link === 'acronym' || this.link === 'ownershipFundingInfo' 
         || this.link === 'linesnumber' || this.link === 'dimensions' || this.link === 'introduction' || this.link === 'conclusion'  || this.link === 'note'  || this.link === 'tableofcontents'
-        || this.link === 'usagerestrictions' || this.link === 'maintenance' || this.link === 'usagerestrictions' || this.link === 'isrelated' || this.link === 'statementofresponsibility' || this.link === 'isversionof'  || this.link === 'jobTitleDescription'  || this.link === 'about' || this.link === 'issuedhijri' || this.link === 'title' || this.link === 'name' || this.link === 'telephone' ? false : true;
+        || this.link === 'usagerestrictions' || this.link === 'maintenance' || this.link === 'usagerestrictions' || this.link === 'isrelated' || this.link === 'statementofresponsibility' || this.link === 'isversionof'  || this.link === 'jobTitleDescription'  || this.link === 'about' || this.link === 'issuedhijri' || this.link === 'title' || this.link === 'name' || this.link === 'telephone' || this.link ==='openingHoursSpecification' ||this.link ==='address' || this.link === 'organizationFoundingDate' || this.link === 'journal-issn' || this.link === 'issn' || this.link ===  'use' ||
+         this.link === 'volume' || this.link === 'number' || this.link === 'journal-title' || this.link === 'birthDateHijri' || this.link === 'deathDateHijri' ? false : true;
 
-        this.externalLinks = this.link === 'facebook' || this.link === 'twitter' || this.link === 'profile' || this.link === 'wikipedia' || this.link === 'email' || this.link === 'reportUri' || this.link === 'youtube' || this.link === 'website' || this.link === 'instagram'? true : false;
+        this.externalLinks = this.link === 'facebook' || this.link === 'twitter' || this.link === 'profile' || this.link === 'wikipedia' || this.link === 'email' || this.link === 'reportUri' || this.link === 'youtube' || this.link === 'website' || this.link === 'instagram' ? true : false;
 
         
     }

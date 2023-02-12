@@ -3003,7 +3003,7 @@
 
   "search.filters.applied.f.has_content_in_original_bundle": "بها ملفات",
 
-  "search.filters.applied.f.itemtype": "النوع",
+  "search.filters.applied.f.itemtype": "نوع الوثيقة",
 
   "search.filters.applied.f.organization": "المؤسسة",
 
@@ -3021,7 +3021,7 @@
 
   "search.filters.applied.f.submitter": "المقدم",
 
-  "search.filters.applied.f.jobTitle": "المسى الوظيفي",
+  "search.filters.applied.f.jobTitle": "الدور",
 
   "search.filters.applied.f.birthDate.max": "نهاية تاريخ الميلاد",
 
@@ -3142,17 +3142,17 @@
 
   "search.filters.filter.has_content_in_original_bundle.head": "بها ملفات",
 
-  "search.filters.filter.itemtype.head": "النوع",
+  "search.filters.filter.itemtype.head": "نوع الوثيقة",
 
-  "search.filters.filter.itemtype.placeholder": "النوع",
+  "search.filters.filter.itemtype.placeholder": "نوع الوثيقة",
 
-  "search.filters.filter.itemtype.label": "بحث النوع",
+  "search.filters.filter.itemtype.label": "بحث نوع الوثيقة",
 
-  "search.filters.filter.jobTitle.head": "المسمى الوظيفي",
+  "search.filters.filter.jobTitle.head": "الدور",
 
-  "search.filters.filter.jobTitle.placeholder": "المسمى الوظيفي",
+  "search.filters.filter.jobTitle.placeholder": "الدور",
 
-  "search.filters.filter.jobTitle.label": "بحث المسمى الوظيفي",
+  "search.filters.filter.jobTitle.label": "بحث الدور",
 
   "search.filters.filter.knowsLanguage.head": "لغة معروفة",
 
@@ -3178,11 +3178,11 @@
 
   "search.filters.filter.objectpeople.label": "بحث الأشخاص",
 
-  "search.filters.filter.organizationAddressCountry.head": "البلد",
+  "search.filters.filter.organizationAddressCountry.head": "الدولة",
 
-  "search.filters.filter.organizationAddressCountry.placeholder": "البلد",
+  "search.filters.filter.organizationAddressCountry.placeholder": "الدولة",
 
-  "search.filters.filter.organizationAddressCountry.label": "بحث البلد",
+  "search.filters.filter.organizationAddressCountry.label": "بحث الدولة",
 
   "search.filters.filter.organizationAddressLocality.head": "المدينة",
 
@@ -4591,7 +4591,7 @@
 'search.filters.applied.f.organizationFoundingDate.max':'نهاية تاريخ التأسيس',
 
 'search.filters.applied.f.organizationAddressLocality':"المدينة",
-'search.filters.applied.f.organizationAddressCountry':"البلد",
+'search.filters.applied.f.organizationAddressCountry':"الدولة",
 
 'default-relationships.search.results.head':'نتائج البحث عن العلاقات الافتراضية',
 'search.filters.applied.f.creativeWorkEditor':'المحرر',
@@ -5166,9 +5166,9 @@
 'item.page.use':'هل يمكن استخدام هذا؟',
 'item.page.filetype':'تنسيق الملف',
 'item.page.color':'اللون',
-'item.page.imagesize':'حجم الملف',
+'item.page.imagesize':'حجم الصورة',
 'item.page.imageorientation':'اتجاه الصورة',
-'item.page.itemquality':'جودة الملف',
+'item.page.itemquality':'جودة الصورة',
 
 
  "search.filters.filter.media.head": 'نوع الوسائط',
@@ -5176,10 +5176,10 @@
   "search.filters.filter.media.placeholder": "اسم نوع الوسائط ",
   "search.filters.applied.f.media": "نوع الوسائط",
 
-   "search.filters.filter.use.head": 'إتاحة الاستخدام',
-  "search.filters.filter.use.label": "بحث نوع إتاحة الاستخدام",
-  "search.filters.filter.use.placeholder": "اسم نوع إتاحة الاستخدام ",
-  "search.filters.applied.f.use": "إتاحة الاستخدام",
+   "search.filters.filter.use.head": 'نوع الإتاحة',
+  "search.filters.filter.use.label": "بحث نوع نوع الإتاحة",
+  "search.filters.filter.use.placeholder": "اسم نوع نوع الإتاحة ",
+  "search.filters.applied.f.use": "نوع الإتاحة",
 
    "search.filters.filter.filetype.head": 'تنسيق الملف',
   "search.filters.filter.filetype.label": "بحث نوع تنسيق الملف",
@@ -5191,26 +5191,26 @@
   "search.filters.filter.color.placeholder": "اسم اللون ",
   "search.filters.applied.f.color": "اللون",
 
- "search.filters.filter.imagesize.head":'حجم الملف',
-  "search.filters.filter.imagesize.label": "بحث حجم الملف",
-  "search.filters.filter.imagesize.placeholder": "حجم الملف ",
-  "search.filters.applied.f.imagesize": "حجم الملف",
+ "search.filters.filter.imagesize.head":'حجم الصورة',
+  "search.filters.filter.imagesize.label": "بحث حجم الصورة",
+  "search.filters.filter.imagesize.placeholder": "حجم الصورة ",
+  "search.filters.applied.f.imagesize": "حجم الصورة",
 
  "search.filters.filter.imageorientation.head":'اتجاه الصورة',
   "search.filters.filter.imageorientation.label": "بحث اسم اتجاه الصورة",
   "search.filters.filter.imageorientation.placeholder": "اسم اتجاه الصورة",
   "search.filters.applied.f.imageorientation": "اتجاه الصورة",
 
-   "search.filters.filter.itemquality.head":'جودة الملف',
-  "search.filters.filter.itemquality.label": "بحث جودة الملف",
-  "search.filters.filter.itemquality.placeholder": "جودة الملف",
-  "search.filters.applied.f.itemquality": 'جودة الملف',
+   "search.filters.filter.itemquality.head":'جودة الصورة',
+  "search.filters.filter.itemquality.label": "بحث جودة الصورة",
+  "search.filters.filter.itemquality.placeholder": "جودة الصورة",
+  "search.filters.applied.f.itemquality": 'جودة الصورة',
 
   
-   "search.filters.filter.rights.head":'بيان الحقوق',
-  "search.filters.filter.rights.label": "بحث نوع بيان الحقوق",
-  "search.filters.filter.rights.placeholder": "بيان الحقوق",
-  "search.filters.applied.f.rights": 'بيان الحقوق',
+   "search.filters.filter.rights.head":'ترخيص الإستخدام',
+  "search.filters.filter.rights.label": "بحث نوع ترخيص الإستخدام",
+  "search.filters.filter.rights.placeholder": "ترخيص الإستخدام",
+  "search.filters.applied.f.rights": 'ترخيص الإستخدام',
 
 
 'cc.license.commercial':'السماح بإستخدام عملك في الأعمال التجارية؟',
@@ -5677,25 +5677,25 @@
 
   "browse.comcol.by.itemtype":"بواسطة النوع",
   "browse.comcol.by.language":"بواسطة اللغة",
-  "browse.comcol.by.rights":"بواسطة بيان الحقوق",
+  "browse.comcol.by.rights":"بواسطة ترخيص الإستخدام",
   "browse.comcol.by.entityType":"بواسطة الكينونة",
   "browse.comcol.by.publisher":"بواسطة الناشر",
 
    "menu.section.browse_global_by_itemtype": "بواسطة النوع",
     "menu.section.browse_global_by_language": "بواسطة اللغة",
-     "menu.section.browse_global_by_rights": "بواسطة بيان الحقوق",
+     "menu.section.browse_global_by_rights": "بواسطة ترخيص الإستخدام",
       "menu.section.browse_global_by_entityType": "بواسطة الكينونة",
       "menu.section.browse_global_by_publisher": "بواسطة الناشر",
 
     "browse.metadata.itemtype":"النوع",
     "browse.metadata.language":"اللغة",
-    "browse.metadata.rights":"بيان الحقوق",
+    "browse.metadata.rights":"ترخيص الإستخدام",
     "browse.metadata.entityType":"الكينونة",
     "browse.metadata.publisher":"الناشر",
 
     "browse.metadata.itemtype.breadcrumbs":'استعراض بواسطة النوع',
     "browse.metadata.language.breadcrumbs":'استعراض بواسطة اللغة',
-    "browse.metadata.rights.breadcrumbs":'استعراض بواسطة بيان الحقوق',
+    "browse.metadata.rights.breadcrumbs":'استعراض بواسطة ترخيص الإستخدام',
     "browse.metadata.entityType.breadcrumbs":'استعراض بواسطة الكينونة',
     "browse.metadata.publisher.breadcrumbs":'استعراض بواسطة الناشر',
 

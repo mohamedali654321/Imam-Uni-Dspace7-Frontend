@@ -1,10 +1,10 @@
 <div *ngVar="bitstreams$ | async as bitstreams">
   <div class="files-menu-header">
     {{ "item.page.files" | translate }}
-    <span *ngIf="bitstreams?.length > 0"
+    <span *ngIf="totalElements > 0"
       >{{ selectedFile >= 0 ? selectedFile + 1 : 0 }}
       /
-      {{ bitstreams?.length }}</span
+      {{ totalElements }}</span
     >
     <div>
       <button
@@ -16,7 +16,7 @@
       </button>
 
       <button
-        [disabled]="selectedFile === bitstreams?.length - 1"
+        [disabled]="selectedFile === totalElements - 1"
         (click)="getNextFile()"
         dsStopContextMenu
       >
@@ -24,21 +24,35 @@
       </button>
     </div>
   </div>
+
   <ds-themed-loading
     *ngIf="isLoading"
     message="{{ 'loading.default' | translate }}"
     [showMessage]="false"
   ></ds-themed-loading>
-  <div *ngIf="bitstreams?.length > 0" class="files-menu">
-    <ds-item-file
-      #filesIds
-      *ngFor="let file of bitstreams; let index = index"
-      [bitstream]="file"
-      [fileIndex]="index"
-      [item]="item"
-      [ngClass]="index === selectedFile ? 'file-link-selected' : 'file-link'"
-      (selectedFile)="selectedFileClickEvent($event)"
+  <cdk-virtual-scroll-viewport
+    [itemSize]="20"
+    #filesListContainer
+    *ngIf="totalElements > 0"
+    class="files-menu"
+    style="height: 70vh"
+  >
+    <ng-container
+      *cdkVirtualFor="
+        let file of bitstreams;
+        let index = index;
+        trackBy: trackByIdx
+      "
     >
-    </ds-item-file>
-  </div>
+      <ds-item-file
+        #filesIds
+        [bitstream]="file"
+        [fileIndex]="index"
+        [item]="item"
+        [ngClass]="index === selectedFile ? 'file-link-selected' : 'file-link'"
+        (selectedFile)="selectedFileClickEvent($event)"
+      >
+      </ds-item-file>
+    </ng-container>
+  </cdk-virtual-scroll-viewport>
 </div>

@@ -21,9 +21,9 @@ ui:
 # NOTE: these settings define which (publicly available) REST API to use. They are usually
 # 'synced' with the 'dspace.server.url' setting in your backend's local.cfg.
 rest:
-  ssl: false
-  host: 52.209.192.143
-  port: 8085
+  ssl: true
+  host: repo-imamu.dev.api.kwaretech.com
+  port: 443
   # NOTE: Space is capitalized because 'namespace' is a reserved string in TypeScript
   nameSpace: /server
 

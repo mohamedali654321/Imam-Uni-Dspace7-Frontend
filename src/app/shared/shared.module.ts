@@ -337,7 +337,7 @@ import { ItemFilesSectionComponent } from './media-viewer-switcher/item-files-se
 import { ItemFileComponent } from './media-viewer-switcher/item-file/item-file.component';
 import { MediaViewerToolbarComponent } from './media-viewer-switcher/media-viewer-toolbar/media-viewer-toolbar.component';
 import { StopContextMenuDirective } from './kware-custom-directives/stop-context-menu-directive/stop-context-menu.directive';
-
+import { ScrollingModule } from '@angular/cdk/scrolling';
 const MODULES = [
   CommonModule,
   SortablejsModule,
@@ -360,6 +360,9 @@ const MODULES = [
   DragDropModule,
   CdkTreeModule,
   GoogleRecaptchaModule,
+   /** kware start edit */
+   ScrollingModule,
+   /** kware end edit */
 ];
 
 const ROOT_MODULES = [

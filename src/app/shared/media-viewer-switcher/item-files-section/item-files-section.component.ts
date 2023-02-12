@@ -1,4 +1,4 @@
-import { Component, Input, OnInit, QueryList, ViewChildren } from '@angular/core';
+import { Component, Input, OnInit, QueryList, ViewChildren, HostListener, ElementRef, ViewChild } from '@angular/core';
 import { Item } from '../../../core/shared/item.model';
 import { BehaviorSubject } from 'rxjs';
 import { Bitstream } from '../../../core/shared/bitstream.model';
@@ -18,11 +18,23 @@ import { ViewerSwitcherService } from '../viewerSwitcherService/viewer-switcher-
 })
 export class ItemFilesSectionComponent implements OnInit {
   @Input() item: Item;
+  @ViewChild('filesListContainer', { static: false }) filesListContainer: ElementRef;
   @ViewChildren('filesIds') filesIds: QueryList<any>;
 
   bitstreams$: BehaviorSubject<Bitstream[]>;
+  filesList: any = [];
   isLoading: boolean;
   selectedFile: number;
+  totalElements: number;
+  totalPages: number;
+
+  currentPage = 1;
+  isLastPage: boolean;
+  pageSize = 10;
+
+  scrollPosition: number;
+
+  isManuscript = false;
 
   constructor(
     protected bitstreamDataService: BitstreamDataService,
@@ -33,11 +45,17 @@ export class ItemFilesSectionComponent implements OnInit {
   }
 
   ngOnInit(): void {
+    this.onLoadMoreFiles();
+  }
+
+  onLoadMoreFiles(): void {
     this.isLoading = true;
-    this.bitstreams$ = new BehaviorSubject([]);
+    if (this.bitstreams$ === undefined) {
+      this.bitstreams$ = new BehaviorSubject([]);
+    }
     this.bitstreamDataService.findAllByItemAndBundleName(this.item, 'ORIGINAL', {
-      currentPage: 1,
-      elementsPerPage: 500
+      currentPage: this.currentPage,
+      elementsPerPage: 9999
     }).pipe(
       getFirstCompletedRemoteData(),
     ).subscribe((bitstreamsRD: RemoteData<PaginatedList<Bitstream>>) => {
@@ -46,6 +64,8 @@ export class ItemFilesSectionComponent implements OnInit {
       } else if (hasValue(bitstreamsRD.payload)) {
         const current: Bitstream[] = this.bitstreams$.getValue();
         this.bitstreams$.next([...current, ...bitstreamsRD.payload.page]);
+        this.totalElements = bitstreamsRD.payload.totalElements;
+        this.totalPages = bitstreamsRD.payload.totalPages;
         this.isLoading = false;
       }
     });
@@ -63,10 +83,10 @@ export class ItemFilesSectionComponent implements OnInit {
         encodeURIComponent(currentElement.fileURL)
         : currentElement.fileURL);
     this.viewerService.setFileName(currentElement.bitstream?.name);
+    currentElement.scrollToView();
   }
 
   getNextFile() {
-    console.log('filesIds', this.filesIds.toArray());
     if (!this.selectedFile && this.selectedFile !== 0) {
       this.selectedFile = 0;
     } else {
@@ -78,5 +98,13 @@ export class ItemFilesSectionComponent implements OnInit {
   getPrevFile() {
     this.selectedFile--;
     this.emitMediaViewerSwitcher();
+  }
+
+  // setManuScriptType() {
+  //   this.viewerService.setManuScriptType(true);
+  // }
+
+  trackByIdx(i) {
+    return i;
   }
 }

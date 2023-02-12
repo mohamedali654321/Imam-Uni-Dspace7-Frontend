@@ -2991,7 +2991,7 @@
 
   "search.filters.applied.f.has_content_in_original_bundle": "Has files",
 
-  "search.filters.applied.f.itemtype": "Type",
+  "search.filters.applied.f.itemtype": "Document Type",
 
   "search.filters.applied.f.organization": "Organization",
 
@@ -3009,7 +3009,7 @@
 
   "search.filters.applied.f.submitter": "Submitter",
 
-  "search.filters.applied.f.jobTitle": "Job Title",
+  "search.filters.applied.f.jobTitle": "Role",
 
   "search.filters.applied.f.birthDate.max": "End birth date",
 
@@ -3129,17 +3129,17 @@
 
   "search.filters.filter.has_content_in_original_bundle.head": "Has files",
 
-  "search.filters.filter.itemtype.head": "Type",
+  "search.filters.filter.itemtype.head": "Document Type",
 
-  "search.filters.filter.itemtype.placeholder": "Type",
+  "search.filters.filter.itemtype.placeholder": "Document Type",
 
-  "search.filters.filter.itemtype.label": "Search type",
+  "search.filters.filter.itemtype.label": "Search document type",
 
-  "search.filters.filter.jobTitle.head": "Job Title",
+  "search.filters.filter.jobTitle.head": "Role",
 
-  "search.filters.filter.jobTitle.placeholder": "Job Title",
+  "search.filters.filter.jobTitle.placeholder": "Role",
 
-  "search.filters.filter.jobTitle.label": "Search job title",
+  "search.filters.filter.jobTitle.label": "Search Role",
 
   "search.filters.filter.knowsLanguage.head": "Known language",
 
@@ -5102,19 +5102,19 @@
 
 
 
- "search.filters.filter.use.head": "Usability",
-  "search.filters.filter.use.label": "Search usability type",
-  "search.filters.filter.use.placeholder": "Usability type",
-  "search.filters.applied.f.use": "Usability",
+ "search.filters.filter.use.head": "Availability type",
+  "search.filters.filter.use.label": "Search availability type",
+  "search.filters.filter.use.placeholder": "Availability type",
+  "search.filters.applied.f.use": "Availability type",
 
 
 
 
 
- "search.filters.filter.filetype.head": "File type",
-  "search.filters.filter.filetype.label": "Search file typename",
-  "search.filters.filter.filetype.placeholder": "File type name",
-  "search.filters.applied.f.filetype": "File type",
+ "search.filters.filter.filetype.head": "Image type",
+  "search.filters.filter.filetype.label": "Search image type name",
+  "search.filters.filter.filetype.placeholder": "Image type name",
+  "search.filters.applied.f.filetype": "Image type",
 
 
 
@@ -5127,10 +5127,10 @@
 
 
 
- "search.filters.filter.imagesize.head": "File size",
-  "search.filters.filter.imagesize.label": "Search File size",
-  "search.filters.filter.imagesize.placeholder": "File size",
-  "search.filters.applied.f.imagesize": "File size",
+ "search.filters.filter.imagesize.head": "Image size",
+  "search.filters.filter.imagesize.label": "Search image size",
+  "search.filters.filter.imagesize.placeholder": "Image size",
+  "search.filters.applied.f.imagesize": "Image size",
 
 
 
@@ -5140,10 +5140,10 @@
   "search.filters.applied.f.imageorientation": "Image orientation",
 
 
- "search.filters.filter.itemqualitye.head": "File quality",
-  "search.filters.filter.itemquality.label": "Search file quality",
-  "search.filters.filter.itemquality.placeholder": "File quality",
-  "search.filters.applied.f.itemquality": "File quality",
+ "search.filters.filter.itemqualitye.head": "Image  quality",
+  "search.filters.filter.itemquality.label": "Search image  quality",
+  "search.filters.filter.itemquality.placeholder": "Image  quality",
+  "search.filters.applied.f.itemquality": "Image  quality",
 
     "search.filters.filter.rights.head": "Rights statement",
   "search.filters.filter.rights.label": "Search rights statement type",

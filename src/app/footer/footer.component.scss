@@ -52,7 +52,7 @@ margin-top: .67rem !important;
 
 hr{
   background-color: #FFF;
-  margin-top: 0 !important;
+  margin-top: -3px !important;
   margin-bottom: 0 !important;
 }
 
@@ -111,7 +111,9 @@ margin-left: -50px !important;
 
 
 @media screen and (max-width:998px){
-
+  .repo-info{
+    width: 1200px !important;
+  }
 
   .container-fluid{gap: 15px;}
 }

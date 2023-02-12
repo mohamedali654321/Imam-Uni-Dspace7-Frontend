@@ -68,7 +68,7 @@ export class ItemFileComponent implements OnInit {
 getIconByFileFormat() {
     switch (true) {
       case this.fileFormat.startsWith('image'):
-        return this.fileURL;
+        return 'assets/images/no_thum.jpg';
       case this.fileFormat === 'application/pdf':
         return 'assets/images/pdf.png';
       case (this.fileFormat ===
