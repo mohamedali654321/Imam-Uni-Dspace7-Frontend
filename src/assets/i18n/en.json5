@@ -5817,6 +5817,17 @@
 'submission.sections.describe.relationship-lookup.search-tab.tab-title.isParticipantOfEvent':'Local Participants ({{ count }})',
 
 'footer.quick.links5':"University's library",
+
+'login.form.oidc':'Organizational login',
+"collection.edit.item.authorizations.show-bitstreams-button": "Show bitstream policies for bundle",
+
+  "collection.edit.tabs.authorizations.head": "Authorizations",
+
+  "collection.edit.tabs.authorizations.title": "Collection Edit - Authorizations",
+
+  "collection.edit.item.authorizations.load-bundle-button": "Load more bundles",
+
+  "collection.edit.item.authorizations.load-more-button": "Load more",
 }
 
 

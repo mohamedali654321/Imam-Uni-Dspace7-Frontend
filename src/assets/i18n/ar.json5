@@ -5898,5 +5898,13 @@
 
 'footer.quick.links5':'مكتبة الجامعة',
 
+'login.form.oidc':'تسجيل دخول مؤسسي',
+"collection.edit.item.authorizations.show-bitstreams-button": "عرض سياسات دفق البت للحزمة",
+  "collection.edit.tabs.authorizations.head": "التراخيص",
 
+  "collection.edit.tabs.authorizations.title": "تحرير المجموعة - التراخيص",
+
+  "collection.edit.item.authorizations.load-bundle-button": "عرض المزيد من الحزم",
+
+  "collection.edit.item.authorizations.load-more-button": "عرض المزيد",
 }
