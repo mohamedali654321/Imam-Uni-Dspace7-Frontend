@@ -1,16 +1,22 @@
 <div class="text-secondary">
-  <h3>{{script?.name}}</h3>
-  <span>{{script?.description}}</span>
+  <!-- kware edit -->
+  <!-- transalte help script name , description , params description -->
+  <h3>{{ lang ? ('process.script.name.'+ script?.name | translate : {default: script?.name} ): script?.name }}</h3>
+  <span>{{lang ? ('process.script.description.'+ script?.name | translate : {default: script?.description}) : script?.description }}</span>
 
   <table class="table-borderless mt-3">
     <tr *ngFor="let param of script?.parameters">
       <td class="align-top text-nowrap">{{param.name}} {{param.nameLong}}
         <ng-container *ngTemplateOutlet="type; context: param"></ng-container>
       </td>
-      <td>{{param.description}}</td>
+            <!-- create composit key for params description  -->
+       <td>{{lang ? ('process.script.'+ script?.name +'.param.'+(param.nameLong? createKey(param.nameLong): createKey(param.name)) | translate: {default: param.description} ) : param.description  }}</td>
+
     </tr>
+    <!-- kware edit end -->
   </table>
 </div>
+
 
 <ng-template #type let-type="type">
     <ng-container [ngSwitch]="type">
